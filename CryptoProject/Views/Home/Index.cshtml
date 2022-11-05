@@ -14,6 +14,9 @@
                 <th>#</th>
                 <th>Coin</th>
                 <th>Price</th>
+                <th>1H</th>
+                <th>24H</th>
+                <th>7D</th>
                 <th>24h Volume</th>
                 <th>Mkt Cap</th>
             </tr>
@@ -26,6 +29,9 @@
                     <th></th>
                     <th> <img class="crypto-img" src="@crypto.Image" />   @crypto.Name   <span class="symbol">@crypto.Symbol</span></th>
                     <th>$@crypto.CurrentPrice.ToString("0,0.0000")</th>
+                    <th class=@(crypto.PriceChange1h > 0 ? "price-green" : "price-red")> %@crypto.PriceChange1h.ToString("0.00")</th>
+                    <th class=@(crypto.PriceChange24h > 0 ? "price-green" : "price-red")> %@crypto.PriceChange24h.ToString("0.00")</th>
+                    <th class=@(crypto.PriceChange7d > 0 ? "price-green" : "price-red")> %@crypto.PriceChange7d.ToString("0.00")</th>
                     <th>$@crypto.TotalVolume.ToString("0,0")</th>
                     <th>$@crypto.MarketCap.ToString("0,0")</th>
                 </tr>
