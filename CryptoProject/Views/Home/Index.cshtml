@@ -1,0 +1,37 @@
+﻿@using System.Globalization
+@model List<CryptoModel>
+@{
+    ViewData["Title"] = "Home Page";
+    var spanishCulture = new CultureInfo("es-ES");
+
+}
+
+<div class="container">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Coin</th>
+                <th>Price</th>
+                <th>24h Volume</th>
+                <th>Mkt Cap</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var crypto in Model)
+            {
+                <tr>
+                    <th></th>
+                    <th> <img class="crypto-img" src="@crypto.Image" />   @crypto.Name   <span class="symbol">@crypto.Symbol</span></th>
+                    <th>$@crypto.CurrentPrice.ToString("0,0.0000")</th>
+                    <th>$@crypto.TotalVolume.ToString("0,0")</th>
+                    <th>$@crypto.MarketCap.ToString("0,0")</th>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+
+</div>
